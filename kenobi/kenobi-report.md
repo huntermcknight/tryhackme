@@ -8,7 +8,7 @@
 
 **Vulnerability Descriptions:**
 
-1.  The \\<victim-ip>\anonymous share allows guest users with read and write privileges, yet it also contains a sensitive log file. Attackers can use the information in this log file, together with the following software vulnerability, to gain low-privilege access to the host.
+1.  The \\\<victim ip\>\anonymous share allows guest users with read and write privileges, yet it also contains a sensitive log file. Attackers can use the information in this log file, together with the following software vulnerability, to gain low-privilege access to the host.
 2.  ProFTPd 1.3.5 has a flaw in its copy_mod module. Attackers can exploit this vulnerability to copy arbitrary files to arbitrary locations on the server, constrained only by the privileges of the FTPd user.
 
 **Privilege Escalation Vulnerability:** The custom binary /usr/bin/menu runs with auto-elevated privileges, and it executes other binaries (in particular, curl) without declaring a full path. This allows attackers to create a malicious curl binary, execute it through the highly privileged /usr/bin/menu binary, and gain root privileges for themselves.

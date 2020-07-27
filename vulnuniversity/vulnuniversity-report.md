@@ -4,7 +4,7 @@
 
 **Vulnerability Exploited:** File Upload from Untrusted Sources
 
-**Vulnerability Explanation:** Visitors to the vulnuniversity website hosted at http://<victim-ip>:3333 are able to access the internal web directory, where they may upload files to the server. Although the server disallows some file extensions, .phtml files may be uploaded. We were able to upload a malicious php script with the .phtml extension and execute it to gain low-privilege access to the server.
+**Vulnerability Explanation:** Visitors to the vulnuniversity website hosted at http://\<victim ip\>:3333 are able to access the internal web directory, where they may upload files to the server. Although the server disallows some file extensions, .phtml files may be uploaded. We were able to upload a malicious php script with the .phtml extension and execute it to gain low-privilege access to the server.
 
 **Privilege Escalation Vulnerability:** The binary /bin/systemctl, which is used for managing services, runs with auto-elevated privileges This means any user can run systemctl with the highest possible privileges without using a password. We were able to create a malicious service and enable it with systemctl in order to gain root privileges.
 
@@ -42,7 +42,7 @@ We find that the upload was sucessful with the .phtml extension.
 
 ![](screenshots/intruder-phtml-success.png)
 
-We start a netcat listener on our attacking machine and launch the shell by navigating to http://<victim-ip>/internal/uploads/shell.phtml in a web browser. Netcat is a multi-purpose tool for making TCP or UDP connections, banner grabbing, listening on local ports, and more. The _-n_ flag tells netcat not to do DNS resolution. The _-v_ flag tells netcat to produce verbose output. Finally, _-lp 443_ tells netcat to _listen_ on _port_ 443.
+We start a netcat listener on our attacking machine and launch the shell by navigating to http://\<victim ip\>/internal/uploads/shell.phtml in a web browser. Netcat is a multi-purpose tool for making TCP or UDP connections, banner grabbing, listening on local ports, and more. The _-n_ flag tells netcat not to do DNS resolution. The _-v_ flag tells netcat to produce verbose output. Finally, _-lp 443_ tells netcat to _listen_ on _port_ 443.
 
 ![](screenshots/www-proof.png)
 
