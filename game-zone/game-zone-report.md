@@ -24,7 +24,7 @@ OpenSSH is fairly up-to-date, so the best target for penetration is the web serv
 
 ![](screenshots/homepage.png)
 
-We find some kind of game-themed web page with a login form. The login form is vulnerable to SQL injection, so we can bypass the login to access internal parts of the site with the username **' or 1=1--**. 
+We find some kind of game-themed web page with a login form. The login form is vulnerable to SQL injection, so we can bypass the login to access internal parts of the site with the username **' or 1=1--**.
 
 To understand how this injection works, imagine what the underlying SQL logic must look like:
 
@@ -78,7 +78,7 @@ We begin enumerating the host internally to find ways to escalate our privileges
 
 We use ssh port forwarding to view the web server on our attacking machine.
 
-**ssh -L 10000:localhost:10000 agent47@\<victim ip\>.4**
+**ssh -L 10000:localhost:10000 agent47@\<victim ip\>**
 
 Now we are able to view the victim's localhost:10000 web server in our own browser.
 
