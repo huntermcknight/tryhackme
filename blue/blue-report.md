@@ -1,4 +1,4 @@
-# Blue Report
+# Blue
 
 ## Summary
 
@@ -17,7 +17,7 @@ We begin with a port scan of the target host. The additional *-Pn* flag tells Nm
 ![](screenshots/nmap-tcp.png)
 
 The host appears to use SMBv1. We can take advantage of more specific Nmap scripts to scan for vulnerabilities related to SMB using the option *--script=smb-vuln-\**.
- 
+
 ![](screenshots/nmap-smb-vuln-script.png)
 
 

@@ -1,6 +1,6 @@
 # Steel Mountain
 
-## Executive Summary
+## Summary
 
 **Vulnerability Exploited:** Rejetto HTTP File Server 2.3 Remote Code Execution (CVE-2014-6287)
 
@@ -8,9 +8,9 @@
 
 **Privilege Escalation Vulnerability:** IObit Advanced Systemcare 9 Unquoted Service Path
 
-**Vulnerability Fix:** Upgrade to the latest version of HTTP File Server (2.3m). Audit service paths to ensure that they are quoted and that installation directories are not world-writable. 
+**Vulnerability Fix:** Upgrade to the latest version of HTTP File Server (2.3m). Audit service paths to ensure that they are quoted and that installation directories are not world-writable.
 
-## Methodology
+## Penetration
 
 We begin with a port scan of the target host.
 
